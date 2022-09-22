@@ -1,0 +1,4 @@
+## About
+The hacker association is a monthly online gathering of security professionals focused on 10 minute or less "turbo-talks".  We were formed from the idea of bringing together security professionals across the world and introducing them to the mini-talk format of the various hacker meetups created around the AHA format operating around the united states. 
+
+Our belief is that because these groups formed independently around the world and were restricted based on the location of hackers to the meetup itself and with the COVID-19 crisis forcing meetups to be done remotely anyway. It was time to bridge the gap between groups and create an independent but similar formatted meetup done entirely online. We aim to provide a quick talk format that allows for a researcher to share information but still short enough to allow those uninterested to wait until the presentation is over.

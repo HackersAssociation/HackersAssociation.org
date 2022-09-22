@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<title> Hacker Association - A monthly meetup of hackers.</title>
+<style>
+body {
+	background: #222;
+	color: #fb0;
+	font: 1.3rem monospace;
+	text-shadow: 0 0 5px #f00;
+	contain: paint;
+	min-height: calc(100vh - 4em);
+	margin: 0;
+	padding: 2em;
+}
+a {
+  color: #fb0;
+}
+.menu{
+  padding: 10px;
+  border: solid 1px #fb0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.grid{
+  position:absolute;
+  bottom: -30%;
+  left:0;
+  margin-left: -50%;
+  width: 200%;
+  height: 100%;
+  background-position-y: 0px;
+  background-image:
+        repeating-linear-gradient(
+        45deg,
+        var(--grid-color,black) 0%,
+        transparent calc(1px + var(--grid-blur,0px)),
+        transparent var(--grid-size),
+        var(--grid-color,black) calc(var(--grid-size) + 1px + var(--grid-blur,0px))),
+        repeating-linear-gradient(
+        135deg,
+        var(--grid-color,black) 0%,
+        transparent calc(1px + var(--grid-blur,0px)), 
+        transparent var(--grid-size),
+        var(--grid-color,black) calc(var(--grid-size) + 1px + var(--grid-blur,0px)));
+  transform:perspective(50vh) rotateX(60deg) translateZ(10px);
+  animation:falling-grid 5s ease-in, moving-grid 0.5s infinite linear 5s;
+  z-index:-1;
+}
+
+@keyframes falling-grid{
+  0%{
+    transform:perspective(0) rotateX(0) rotateZ(45deg) translateZ(0) translateY(0);
+    width: 200vw;
+    height: 200vw;
+  }
+  100%{
+    transform:perspective(50vh) rotateX(60deg) translateZ(10px) translateY(calc(-var(--grid-size) * 1.414213562373095));
+  }
+}
+@keyframes moving-grid{
+  0%{
+    transform:perspective(50vh) rotateX(60deg) translateZ(10px) translateY(calc(var(--grid-size) * -1.414213562373095));
+  }
+  100%{
+    transform:perspective(50vh) rotateX(60deg) translateZ(10px) translateY(calc(var(--grid-size) * 1.414213562373095));
+  }
+}
+</style>
+<script>
+function xhrload(elem){
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', '/xhr/' + elem.getAttribute('href')); 
+	xhr.onload = function() { document.getElementById("content").innerHTML = xhr.response; window.history.pushState('{}', document.title, elem.getAttribute('href'));};
+  xhr.send();
+  return false;
+}
+</script>
+</head>
+<body>
+<pre>
+  _   _            _              _                       _       _   _
+ | | | | __ _  ___| | _____ _ __ / \   ___ ___  ___   ___(_) __ _| |_(_) ___  _ __
+ | |_| |/ _` |/ __| |/ / _ \ '__/ _ \ / __/ __|/ _ \ / __| |/ _` | __| |/ _ \| '_ \
+ |  _  | (_| | (__|   <  __/ | / ___ \\__ \__ \ (_) | (__| | (_| | |_| | (_) | | | |
+ |_| |_|\__,_|\___|_|\_\___|_|/_/   \_\___/___/\___/ \___|_|\__,_|\__|_|\___/|_| |_|
+
+</pre>
+<div class="menu"> <a href="/home" onclick="xhrload(this); return false;" >home</a> |  <a href="/about" onclick="xhrload(this); return false;">about</a> |  <a href="/rules" onclick="xhrload(this); return false;">rules</a> |  <a href="/presentations" onclick="xhrload(this); return false;">presentations</a> |  <a href="/meetings" onclick="xhrload(this); return false">meetings</a> |  <a href="/chat" onclick="xhrload(this);return false;">chat</a> |  <a href="/irl" onclick="xhrload(this); return false;">origin</a>  </div>
+<div class="content" id="content">
