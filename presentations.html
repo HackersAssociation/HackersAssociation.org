@@ -68,15 +68,7 @@ a {
   }
 }
 </style>
-<script>
-function xhrload(elem){
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', '/xhr/' + elem.getAttribute('href')); 
-	xhr.onload = function() { document.getElementById("content").innerHTML = xhr.response; window.history.pushState('{}', document.title, elem.getAttribute('href'));};
-  xhr.send();
-  return false;
-}
-</script>
+ 
 </head>
 <body>
 <pre>
@@ -87,7 +79,7 @@ function xhrload(elem){
  |_| |_|\__,_|\___|_|\_\___|_|/_/   \_\___/___/\___/ \___|_|\__,_|\__|_|\___/|_| |_|
 
 </pre>
-<div class="menu"> <a href="/index.html" onclick="xhrload(this); return false;" >home</a> |  <a href="/about.html" onclick="xhrload(this); return false;">about</a> |  <a href="/rules.html" onclick="xhrload(this); return false;">rules</a> |  <a href="/presentations.html" onclick="xhrload(this); return false;">presentations</a> |  <a href="/meetings.html" onclick="xhrload(this); return false">meetings</a> |  <a href="/chat.html" onclick="xhrload(this);return false;">chat</a> |  <a href="/irl.html" onclick="xhrload(this); return false;">origin</a>  </div>
+<div class="menu"> <a href="/index.html" >home</a> |  <a href="/about.html">about</a> |  <a href="/rules.html">rules</a> |  <a href="/presentations.html">presentations</a> |  <a href="/meetings.html" onclick="xhrload(this); return false">meetings</a> |  <a href="/chat.html" onclick="xhrload(this);return false;">chat</a> |  <a href="/irl.html">origin</a>  </div>
 <div class="content" id="content">
 <h2>Presentations</h2>
 <p>Presentations can be anything, from a interesting story about a penetration test gone wrong, to a technical breakdown of a no-click 0-day in iOS. </p>
